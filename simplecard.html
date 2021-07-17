@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+ <!--   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"> -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+   <link rel="stylesheet" href="dist/star-rating.css">
+    <link rel="stylesheet" href="demo/styles.min.css">
+   <style>
+    html { scroll-behavior: smooth; }
+      @media (min-width:768px) {
+        .navbar li>a {
+          position: relative;
+          padding-top:5px;
+
+        }
+        .navbar-brand {
+          padding:20px;
+        }
+      }
+      .card {
+        box-shadow:20px 20px 50px grey;
+        max-width: 300px;
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+        z-index: 100px;
+      }
+
+      .title {
+        color: grey;
+        font-size: 18px;
+      }
+
+      .contact{
+        border-left: 5px solid #de595475;
+        background-color: rgba(189,60,60,0.13);
+        font-size: 18px;
+       /* display: inline-block;*/
+        opacity:
+        padding-left: 15px;
+        line-height: 40px;
+
+      }
+      .contact2{
+        border-left: 5px solid #b3b300;
+        background-color: rgba(226,215,14,0.25);
+        font-size: 18px;
+        /*display: inline-block;*/
+        opacity:
+        padding-left: 15px;
+        line-height: 40px;
+
+      }
+      .contact3{
+        border-left: 5px solid #18184e;
+        background-color: rgba(21,49,140,0.2);
+        font-size: 18px;
+        /*display: inline-block;*/
+        opacity:
+        padding-left: 15px;
+        line-height: 40px;
+
+      }
+      .contact4{
+        border-left: 5px solid #004d1a;
+        background-color: rgba(61,154,35,0.29);
+        font-size: 18px;
+        /*display: inline-block;*/
+        opacity:
+        padding-left: 15px;
+        line-height: 40px;
+
+      }
+
+      .contact5{
+        border-left: 5px solid #550080;
+        background-color: rgba(10,10,10,0.18);
+        font-size: 18px;
+        /*display: inline-block;*/
+        opacity:
+        padding-left: 15px;
+        line-height: 40px;
+
+      }
+
+      .contact6{
+        border-left: 5px solid #ffff33;
+        background-color: rgba(10,10,10,0.4);
+        font-size: 18px;
+        /*display: inline-block;*/
+        opacity:
+        padding-left: 15px;
+        line-height: 40px;
+
+      }
+
+      button {
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+      }
+
+      a {
+        text-decoration: none;
+        font-size: 10px;
+        color: black;
+        }
+
+      button:hover, a:hover {
+        opacity: 0.7;
+      }
+      .float{
+        box-shadow: 2px 2px 3px #999;
+        z-index:100;
+        font-size: 13px;
+        background-color: #de595475;
+        border-radius: 100px;
+        margin: 0 auto;
+        color: black;
+        padding-right:29px; 
+      }
+      .fa{
+        padding-right: 20px;
+        align-items: center;
+        align-content: center;
+      }
+      .glyphicon{
+        padding-right: :20px;
+        align-items: center;
+        align-content: center;
+      }
+      .panel-group{
+        width: 100%;
+
+      }
+      .panel-default{
+        width: 100%;
+
+      }
+      .testtitle{
+        font-size: 18px;
+        text-decoration: none;
+      }
+      .panel-body{
+        text-decoration: none;
+      } 
+      .fishes
+    {
+      position: relative;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+    }
+    .fish
+    {
+      position: absolute;
+      top: 180px;
+      left: 60px;
+      border-radius: 20%;
+      /*border-width: 5px;*/
+      border:5px solid blue;
+      z-index: 100%;
+      box-shadow:20px 20px 50px grey; 
+    }
+    body {
+  background-image: url('triangel white.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+
+}
+
+.backimg{
+  background-image: url('gaa.png')
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.nav.navbar-nav li {
+    float: left;
+}
+
+.pat1 {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+ padding: 14px;
+}
+.pat {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+}
+.effects{
+
+  scroll-behavior: [ auto | smooth ];
+}
+
+.scrolling-box {
+  background-color: #eaeaea;
+  display: block;
+  height: 200px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  text-align: center;
+  width: 200px;
+}
+.bimg{
+  object-fit: cover;
+}
+
+.card-img-overlay{
+  position: relative;
+}
+.cimg{
+  filter: blur(2px);
+
+}
+.card-h{
+ text-align: center;
+}
+.col-sm-1{
+  width: 50%;
+}
+
+
+  </style>
+  </head>
+<script type="text/javascript">
+    function theFunction () {
+       location.href='tel:+11115551212'
+    }
+</script>
+<!-- <script type="text/javascript">
+ window.addEventListener("DOMContentLoaded", event => {
+  const audio = document.querySelector("audio");
+  audio.volume = 0.2;
+  audio.play();
+});
+ --></script> -->
+  <body>
+
+<div>
+  <!-- <audio src="audio.mp3" autoplay></audio> -->
+ <!--  <audio src="audio.mp3"></audio> -->
+
+ <audio controls id="audio">
+  <source src="audio.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
+<script type="text/javascript">
+     document.getElementById('audio').play();
+</script>
+<script type="text/javascript">
+function testVariable() {
+            var strText = document.getElementById("textone").value;          
+            var strText1 = document.getElementById("textTWO").value;
+            var result = strText + ' ' + strText1;
+            document.getElementById('spanResult').textContent = result;
+             
+        }
+</script>        
+<!-- <iframe width="0" height="0" src="audio.mp3" frameborder="0" allowfullscreen></iframe>-->
+  <!-- <iframe src="audio.mp3" width="0" height="0" frameborder="0" allow="autoplay;"></iframe> -->
+ <!-- <embed src="audio.mp3" autoplay>  -->
+</div>
+<!-- <audio src="audio.mp3" autoplay> -->
+<!-- <audio controls autoplay>
+  <source src="audio.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio> -->
+
+    <!--<div class="scrolling-box">--><!-- scroll box-->
+    <h2 style="text-align:center"></h2>
+    <div class="card" style=" border-radius: 0px 10px 20px">
+  
+  <div>
+    <img src="sms.jpg" style="width:100% ; padding-top:15px">
+    <img src="maskimg.jpg"style="width: 150px; border-radius:20px 5px 20px;">
+    
+    <br>
+      <h1 style="font-family: monospace;">Anonymous</h1>
+      <address>
+      <p class="title">
+      Branch Manager
+      Ground floor, Basvan Galli,
+      Belgaum Karnataka - 590002,  </address>
+      Phone: <a onClick="theFunction();" style="font-size: 16px;font-family:arial;">+91 831 421 0077</a></p>
+   
+<!-- <div class="icon-bar" style=""> -->
+  <a href="https://www.facebook.com/chatrapatimultistate/" class="facebook" ><i class="fa fa-facebook-f col-sm-1" style="font-size:24px;"></i></a>
+  <!-- <a href="#" class=""><i class="fa fa-instagram col-sm-1" style="font-size:24px;color:orange;"></i></a> -->
+  <a href="https://http://chatrapatimultistate.in" class="google"><i class="fa fa-globe col-sm-1" style="font-size:24px;"></i></a>
+  <a href="#" class="youtube"><i class="fa fa-qrcode col-sm-1" style="font-size:24px;color:black;"></i></a>
+   <a href="https://wa.me/919663176960?text=Got reference from your Digital vCard. Want to know more about your products and services." class="Whatsapp" ><i class="fa fa-whatsapp col-sm-1" style="font-size:24px;"></i></a>
+
+   <a href="mailto:info@linkconnect.in" class="mail"><i class="fa fa-envelope col-sm-1" style="font-size:24px;"></i></a>
+<!-- </div> -->
+<!-- <i class="fab fa-instagram"></i> -->
+
+<a href="" class="facebook" ><i class="fa fa-map-marker col-sm-1" style="font-size:24px;"></i></a>
+
+  </div>
+
+<!--new lables-->
+
+<!-- <div class="panel-group" id="accordion">
+  <div class="panel panel-default contact">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="testtitle" style="text-decoration: none;">
+        <pre class="testtitle"> &nbsp;&nbsp;About Us &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-chevron-down"></span></pre>
+        </a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse">
+      <div class="panel-body"><a href="#"><i class='fa fa-2x fa-building'><br>Company</i></a>
+          <a href="#"><i class='fa fa-user' style="font-size:20px;"><br>Profile</i></a></div>
+    </div>
+  </div>
+
+
+
+  <div class="panel panel-default contact">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="testtitle" style="text-decoration: none;">
+        <pre class="testtitle">&nbsp;&nbsp;Contact Us &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-chevron-down"></span></pre></a>
+      </h4>
+    </div>
+    <div id="collapse2" class="panel-collapse collapse">
+      <div class="panel-body">
+        <a href="#"><i class="fa fa-2x fa-linkedin "><br>LinkedIn</i></a>  
+        <a href="#"><i class='fa fa-2x fa-facebook'><br>facebook</i></a> 
+        <a href="#"><i class="fa fa-2x fa-whatsapp"><br>Whatsapp</i></a>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+</div><!-- card class close-->
+<br>
+
+<!-- card2 class-->
+<section id="sectionId2">
+<div class="card " style=" border-radius: 0px 10px 20px">
+  <img class="card-img cimg" src="gaa1.png" alt="Card image"/>
+    <h2 class="card-title card-h" style="position: absolute;padding: 99px 90px 50px; ">About Us</h2>
+    <p class="card-text" style="text-align:left;position: relative;padding: 10px 10px 5px;">With the motto of serving the people, Chatrapati Multistate Co-operative Credit Society Ltd. was founded in 2014, by Shri. Santosh (Nana) Bhandari. The idea to empower people was ably supported by a group of like-minded individuals.
+
+The first step of empowerment was to give financial support to the ambitious yet needy people, who believed in passionately following their dreams. Over the years, the passion, dedication, and vision of Shri. Santosh Bhandari has diversified the operations of Chatrapati Multistate.
+
+Today, the family is moving ahead with 21 branches and more than 1,00,000 satisfied account holders in a very short period where CMCS continues to support more and more dreams, across the rural-urban region of India.</p>
+<br><br>
+  </div>
+</div>
+</section>
+<!-- card2 class close-->
+
+<br>s
+<section id="sectionId3"><!-- section3 start-->
+<div class="card " style=" border-radius: 0px 10px 20px">
+  <img class="card-img cimg" src="gaa1.png" alt="Card image"/>
+    <h2 class="card-title card-h" style="position: absolute;padding: 99px 90px 50px; ">Company</h2>
+    <p class="card-text" style="text-align:left;position: relative;padding: 15px 25px 8px;">It gives me immense pleasure to connect with people through different projects. I firmly believe that the foundation of Chatrapati is these very people that drive us forward, every day.</p>
+<b><h3>Success Journey</h3></b><p class="card-text" style="text-align:left;position: relative;padding: 15px 25px 8px;">
+Our journey that started in Beed has reached across many cities and we tried to positively impact the lives of thousands and lakhs of individuals, it has been able to connect with. In just six years, we have established 21 branches in 8 districts & 2 states.
+
+Chatrapati Multistate has been able to employ 250 people and helped more than 5000+ business owners to achieve their dreams. We are very proud of this. It was only possible due to the support of the hardworking employees and the direct and indirect cooperation of all of you.
+</p><br>
+<br>
+<b><h3>Our Employees</h3></b><p class="card-text" style="text-align:left;position: relative;padding: 15px 25px 8px;">
+Our employees are the backbone of our credit society. They are giving effective, quick, and doorstep services to our customers. We have our training campus and the employees are given appropriate training regularly from various perspectives.
+
+We have a core team at the main branch to monitor the working of other branches. They always take forth and back review of the work and provide very good guidance to all staff members wherever needed.
+<br>
+<br></p>
+<b><h3>Future Plan</h3></b><p class="card-text" style="text-align:left;position: relative;padding: 15px 25px 8px;">
+I am especially happy to announce that in the next 5 years, we intend to establish 100 branches in Maharashtra and Karnataka to employ 1500+young and dynamic graduates. Our main goal is to provide financial support to 1 lakh people for businesses to achieve their dreams. For this, We welcome you to join, the fastest growing family of Chatrapati Multistate. We strongly believe that our various schemes will not only make your life pleasant but also shape your future.
+</p>
+</div>
+</div>
+</section><!-- section3 close -->
+
+
+
+
+
+
+<br><br>
+<section id="sectonId4"><!-- section4 start -->
+  <div class="card" style=" border-radius: 0px 10px 20px">
+   <img class="card-img cimg" src="gaa1.png" alt="Card image"/>
+
+
+<!--new lables-->
+<h2 class="card-title card-h" style="position: absolute;padding: 99px 90px 50px; ">Our Services</h2>
+<br>
+<div class="panel-group" id="accordion">
+
+
+<!--  <div class="panel panel-default contact">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="testtitle" style="text-decoration: none;">
+        <pre class="testtitle"> &nbsp;&nbsp;About Us &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-chevron-down"></span></pre>
+        </a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse">
+      <div class="panel-body">
+        jkfcnkjsacnz x iasjdoias o iasj oajdoa  alna dnlasno sado 
+      </div>
+    </div>
+  </div> -->
+
+<br><br>
+
+  <div class="panel panel-default contact2">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="testtitle" style="text-decoration: none;">
+        <pre class="testtitle"><b><i class="fa fa-rupee" style="font-size:24px;padding: 10px 10px 10px;"> &nbsp;Current Account</i></b><span class="glyphicon glyphicon-chevron-down"></span></pre></a>
+      </h4>
+    </div>
+    <div id="collapse2" class="panel-collapse collapse">
+      <div class="panel-body">
+        It is used by individuals, businesses, etc who have regular transactions with the bank. We help you make rapid progress in your business & personal life.
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default contact3">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="testtitle" style="text-decoration: none;">
+        <pre class="testtitle"><b><i class="fa fa-money" style="font-size:24px;padding: 10px 10px 10px;">&nbsp;Fix Deposit (FD)
+</i></b><span class="glyphicon glyphicon-chevron-down"></span></pre></a>
+      </h4>
+    </div>
+    <div id="collapse3" class="panel-collapse collapse">
+      <div class="panel-body">
+        FD's offer greater returns on the principal invested when compared to the returns generated from a regular savings account. With us let your funds grow safely.
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default contact4">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4" class="testtitle" style="text-decoration: none;">
+        <pre class="testtitle"><b><i class="fa fa-address-card" style="font-size:24px;padding: 10px 10px 10px;">&nbsp;Recurring deposit (RD)
+</i></b><span class="glyphicon glyphicon-chevron-down"></span></pre></a>
+      </h4>
+    </div>
+    <div id="collapse4" class="panel-collapse collapse">
+      <div class="panel-body">
+        RD's, help people with regular incomes to deposit a fixed amount every month into their recurring deposit account and earn interest at the rate applicable to fixed deposits.
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default contact5">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse5" class="testtitle" style="text-decoration: none;">
+        <pre class="testtitle"><b><i class="fa fa-check-circle" style="font-size:24px;padding: 10px 10px 10px;">&nbsp;Loan
+</i></b><span class="glyphicon glyphicon-chevron-down"></span></pre></a>
+      </h4>
+    </div>
+    <div id="collapse5" class="panel-collapse collapse">
+      <div class="panel-body">
+        From establishing a business to owning a home, people need money for different purposes. We made loan simpler for people through a wide range of loans designed as per individual's need.
+      </div>
+    </div>
+  </div>
+
+ <div class="panel panel-default contact">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse6" class="testtitle" style="text-decoration: none;">
+        <pre class="testtitle"><b><i class="fa fa-calendar-check-o" style="font-size:24px;padding: 10px 10px 10px;">&nbsp;Future Fix Deposit
+</i></b><span class="glyphicon glyphicon-chevron-down"></span></pre></a>
+      </h4>
+    </div>
+    <div id="collapse6" class="panel-collapse collapse">
+      <div class="panel-body">
+        Pay 25000 once and get FD of 40000. This is a great plan for a secure future.
+      </div>
+    </div>
+  </div>
+<br><br>
+
+
+
+</div><!-- card class close-->
+</section><!-- section4 end-->
+<br>
+<section id="sectionId5"> <!-- section5 start-->
+<div class="card " style=" border-radius: 0px 10px 20px">
+   <img class="card-img cimg" src="gaa1.png" alt="Card image"/>
+    <h2 class="card-title card-h" style="position: absolute;padding: 99px 90px 50px; ">Your Feedback</h2>
+    <p class="card-text" style="">
+      <br>
+
+<!--  <label for="glsr-ltr">Left to Right</label> -->
+                <div class="form-field">
+                    <select id="glsr-ltr" class="star-rating">
+                        <option value="">Select a rating</option>
+                        <option value="5">Fantastic</option>
+                        <option value="4">Great</option>
+                        <option value="3">Good</option>
+                        <option value="2">Poor</option>
+                        <option value="1">Terrible</option>
+                    </select>
+                </div>
+
+ <input type="text" name="feedbackname" id="feedbackname" placeholder="Enter the name"/>
+ <textarea name="feedback" id="feedbackarea" placeholder="enter your feedback"></textarea>
+ <button  onclick="testVariable()">Submit</button>    
+    <span id="spanResult">
+
+    </span>
+<br><br>
+<div id="writer"></div>
+
+    </p>
+  </div>
+  <br><br><br><br><br>
+</div>
+</section> <!-- section5 close-->
+
+<section id="sectionId6"><!-- section6 start-->
+<div class="card " style=" border-radius: 0px 10px 20px">
+  <img class="card-img cimg" src="gaa1.png" alt="Card image"/>
+    <h2 class="card-title card-h" style="position: absolute;padding: 99px 90px 50px; ">Reviews</h2>
+    <p class="card-text" style="text-align:left;position: relative;padding: 10px 10px 5px;">It gives me immense pleasure to connect with people through different projects. I firmly believe that the foundation of Chatrapati is these very people that drive us forward, every day.
+
+
+  </div>
+</div>
+</section><!-- section6 close -->
+
+
+
+
+
+
+    <div ><!-- navbar start-->
+   
+<div class=" pat1 pat" style="display: inline-block; " >
+<a href="#" class="effects"  style="padding: 9px; font-size: 20px;"><i class="fa fa-home" style="font-size:24px;padding: 20px 11px 10px;">&nbsp;Home</i></a> 
+<a href="#sectionId2" class="effects" style="padding: 9px; font-size: 20px;"><i class="fa fa-user" style="font-size:24px;padding: 20px 11px 10px;">&nbsp;About Us</i></a>
+<a href="#sectionId3" class="effects" style="padding: 9px; font-size: 20px;"><i class="fa fa-building" style="font-size:24px;padding: 20px 11px 10px;">&nbsp;Company</i></a>
+<a href="#sectonId4" class="effects" style="padding: 9px; font-size: 20px;"><i class="fa fa-newspaper" style="font-size:24px;padding: 20px 11px 10px;">&nbsp;Our Services</i></a>
+<a href="#sectionId5" class="effects" style="padding: 9px; font-size: 20px;"><i class="fa fa-commenting" style="font-size:24px;padding: 20px 11px 10px;">&nbsp;Your Feedback</i></a>
+
+</div>
+
+
+
+
+    </div><!-- navbar close-->
+ <!-- </div>--><!-- scrolling box-->
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-zc7WDnCM3aom2EziyDIRAtQg1mVXLdILE09Bo+aE1xk0AM2c2cVLfSW9NrxE5tKTX44WBY0Z2HClZ05ur9vB6A==" crossorigin="anonymous"></script>
+    <script src="dist/star-rating.js?ver=4.0.2"></script>
+    <script>
+        var destroyed = false;
+        var svg = {
+            emote: [
+                '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="gl-emote"><circle class="gl-emote-bg" fill="#FFA98D" cx="12" cy="12" r="10"/><path fill="#393939" d="M12 14.6c1.48 0 2.9.38 4.15 1.1a.8.8 0 01-.79 1.39 6.76 6.76 0 00-6.72 0 .8.8 0 11-.8-1.4A8.36 8.36 0 0112 14.6zm4.6-6.25a1.62 1.62 0 01.58 1.51 1.6 1.6 0 11-2.92-1.13c.2-.04.25-.05.45-.08.21-.04.76-.11 1.12-.18.37-.07.46-.08.77-.12zm-9.2 0c.31.04.4.05.77.12.36.07.9.14 1.12.18.2.03.24.04.45.08a1.6 1.6 0 11-2.34-.38z"/></svg>',
+                '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="gl-emote"><circle class="gl-emote-bg" fill="#FFC385" cx="12" cy="12" r="10"/><path fill="#393939" d="M12 14.8c1.48 0 3.08.28 3.97.75a.8.8 0 11-.74 1.41A8.28 8.28 0 0012 16.4a9.7 9.7 0 00-3.33.61.8.8 0 11-.54-1.5c1.35-.48 2.56-.71 3.87-.71zM15.7 8c.25.31.28.34.51.64.24.3.25.3.43.52.18.23.27.33.56.7A1.6 1.6 0 1115.7 8zM8.32 8a1.6 1.6 0 011.21 2.73 1.6 1.6 0 01-2.7-.87c.28-.37.37-.47.55-.7.18-.22.2-.23.43-.52.23-.3.26-.33.51-.64z"/></svg>',
+                '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="gl-emote"><circle class="gl-emote-bg" fill="#FFD885" cx="12" cy="12" r="10"/><path fill="#393939" d="M15.33 15.2a.8.8 0 01.7.66.85.85 0 01-.68.94h-6.2c-.24 0-.67-.26-.76-.7-.1-.38.17-.81.6-.9zm.35-7.2a1.6 1.6 0 011.5 1.86A1.6 1.6 0 1115.68 8zM8.32 8a1.6 1.6 0 011.21 2.73A1.6 1.6 0 118.33 8z"/></svg>',
+                '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="gl-emote"><circle class="gl-emote-bg" fill="#FFD885" cx="12" cy="12" r="10"/><path fill="#393939" d="M15.45 15.06a.8.8 0 11.8 1.38 8.36 8.36 0 01-8.5 0 .8.8 0 11.8-1.38 6.76 6.76 0 006.9 0zM15.68 8a1.6 1.6 0 011.5 1.86A1.6 1.6 0 1115.68 8zM8.32 8a1.6 1.6 0 011.21 2.73A1.6 1.6 0 118.33 8z"/></svg>',
+                '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="gl-emote"><circle class="gl-emote-bg" fill="#FFD885" cx="12" cy="12" r="10"/><path fill="#393939" d="M16.8 14.4c.32 0 .59.2.72.45.12.25.11.56-.08.82a6.78 6.78 0 01-10.88 0 .78.78 0 01-.05-.87c.14-.23.37-.4.7-.4zM15.67 8a1.6 1.6 0 011.5 1.86A1.6 1.6 0 1115.68 8zM8.32 8a1.6 1.6 0 011.21 2.73A1.6 1.6 0 118.33 8z"/></svg>',
+            ],
+
+        };
+        var starrating = new StarRating('.star-rating', {
+            stars: function (el, item, index) {
+                if (this.values.length > 5) {
+                    el.innerHTML = svg.stars.square;
+                } else {
+                    el.innerHTML = svg.emote[index];
+                }
+            },
+        });
+        var starratingOld = new StarRating('.star-rating-old');
+        document.querySelector('.toggle-star-rating').addEventListener('click', function () {
+            if (!destroyed) {
+                starrating.destroy();
+                starratingOld.destroy();
+                destroyed = true;
+            } else {
+                starrating.rebuild();
+                starratingOld.rebuild();
+                destroyed = false;
+            }
+        });
+</script>
+</body>
+
+</html>
